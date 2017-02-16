@@ -17,7 +17,7 @@ export default Creators
 export const INITIAL_STATE = Immutable({
   data: null,
   fetching: null,
-  payload: null,
+  payload: [],
   error: null
 })
 
@@ -25,12 +25,14 @@ export const INITIAL_STATE = Immutable({
 
 // request the data from an api
 export const request = (state, { data }) =>
-  state.merge({ fetching: true, data, payload: null })
+  state.merge({ fetching: true, data});
 
 // successful api lookup
 export const success = (state, action) => {
   const { payload } = action
-  return state.merge({ fetching: false, error: null, payload })
+  console.tron.log(state);
+  let temp = state.without("data", "fetching", "error")['payload'].concat(payload);
+  return state.merge({ fetching: false, error: null, payload:temp })
 }
 
 // Something went wrong somewhere.

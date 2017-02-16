@@ -66,8 +66,8 @@ class ListviewExample extends React.Component {
         <View style={styles.row}>
           <View style={{justifyContent:'flex-start', padding:5, flex:1}}>
             <Text
-              style={{fontFamily:'AvenirNext-UltraLight', fontSize:12, fontWeight:'300'}}>{rowData.data.toUpperCase()}</Text>
-            <Text style={{fontFamily:'AvenirNext-UltraLight', fontSize:12, fontWeight:'100'}}>{rowData.type}</Text>
+              style={{fontFamily:'AvenirNext-UltraLight', fontSize:12, fontWeight:'300'}}>{rowData.itemname.toUpperCase()}</Text>
+            <Text style={{fontFamily:'AvenirNext-UltraLight', fontSize:12, fontWeight:'100'}}>{rowData.number}</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -123,7 +123,7 @@ const mapStateToProps = (state) => {
 
   console.log(state.barcode);
   return {
-    item_data: state.barcode.payload
+    item_data: state.barcodeapi.payload
   }
 };
 

@@ -2,7 +2,7 @@
 import apisauce from 'apisauce'
 
 // our "constructor"
-const create = (baseURL = 'http://api.upcdatabase.org/json/a7627bba1ee5038850cb2e5382d09d22/') => {
+const create = (baseURL = 'http://api.upcdatabase.org/json/') => {
   // ------
   // STEP 1
   // ------
@@ -40,7 +40,7 @@ const create = (baseURL = 'http://api.upcdatabase.org/json/a7627bba1ee5038850cb2
   //
   const getCity = (city) => api.get('weather', {q: city})
 
-  const getCode = (code) => api.get(code);
+  const getCode = (code) => api.get('a7627bba1ee5038850cb2e5382d09d22/' + code);
 
 
   // ------

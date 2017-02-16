@@ -45,11 +45,11 @@ class BarCodeScreen extends React.Component {
     return (
       <BarcodeScanner
         onBarCodeRead={(code_data) => {
-          if(this.state.code != code_data.code && this.state.bdata != code_data.data)
+          if(this.state.code != code_data.type && this.state.bdata != code_data.data )
            {
              this.props.sendData(code_data);
-             this.props.apiReq(code_data.bdata);
-             this.state.code = code_data.code;
+             this.props.apiReq(code_data.data);
+             this.state.code = code_data.type;
              this.state.bdata = code_data.data;
            }
         }}

@@ -1,5 +1,7 @@
 import { put, select } from 'redux-saga/effects'
 import TemperatureActions from '../Redux/TemperatureRedux'
+import BarCodeActions from '../Redux/BarCodeRedux'
+
 import { is } from 'ramda'
 
 // exported to make available for tests
@@ -36,5 +38,6 @@ export function * startup (action) {
   // only fetch new temps when we don't have one yet
   if (!is(Number, temp)) {
     yield put(TemperatureActions.temperatureRequest('San Francisco'))
+    yield put(BarCodeActions.barCodeRequest('0111222333446'))
   }
 }
