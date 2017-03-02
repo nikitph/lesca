@@ -12,6 +12,7 @@
 
 import { call, put } from 'redux-saga/effects'
 import BarCodeActions from '../Redux/BarCodeRedux'
+import {Actions as NavigationActions} from 'react-native-router-flux'
 
 export function * getBarCode (api, action) {
   const { data } = action
@@ -26,6 +27,7 @@ export function * getBarCode (api, action) {
    if(response.data.valid) yield put(BarCodeActions.barCodeSuccess(response.data))
     else
      yield put(BarCodeActions.barCodeFailure())
+      NavigationActions.pop()
   } else {
     yield put(BarCodeActions.barCodeFailure())
   }
