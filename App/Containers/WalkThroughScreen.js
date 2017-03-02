@@ -34,7 +34,7 @@ class WalkThroughScreen extends React.Component {
             <Animatable.Image animation='fadeIn' source={Images.quiks} style={[styles.cart]}/>
             <Text
               style={{fontFamily:'American Typewriter', textAlign:'center', color:'#8F7140', fontSize:16, marginLeft:25,  marginRight:25,  marginTop:-75}}>
-              Just click Calculate Sunrise & Sunset on the main page to get todays times for your current location</Text>
+              Just click scan to add items and then send when you reach cashier. Done!</Text>
 
 
             <View style={{marginTop:30}}>
