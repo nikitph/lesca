@@ -69,7 +69,7 @@ class ListviewExample extends React.Component {
         <View style={styles.row}>
           <View style={{justifyContent:'flex-start', padding:5, flex:1}}>
             <Text
-              style={{fontFamily:'AvenirNext-UltraLight', fontSize:12, fontWeight:'300'}}>{rowData.itemname.toUpperCase()}</Text>
+              style={{fontFamily:'AvenirNext-UltraLight', fontSize:12, fontWeight:'300'}}>{rowData.itemname ? rowData.itemname.toUpperCase() : ''}</Text>
             <Text style={{fontFamily:'AvenirNext-UltraLight', fontSize:12, fontWeight:'100'}}>{rowData.number}</Text>
           </View>
         </View>
@@ -111,11 +111,11 @@ class ListviewExample extends React.Component {
           renderRow={this.renderRow}
           pageSize={15}
         />
-        <ActionButton buttonColor="rgba(231,76,60,1)" hideShadow={true}
+        <ActionButton buttonColor="#F0D796"
           onPress={() => NavigationActions.deviceInfo()}/>
 
-        <ActionButton buttonColor="#3498db" hideShadow={true}
-                      onPress={() => NavigationActions.deviceInfo()} position={"center"} icon={<Icon name='md-send' size={Metrics.icons.medium} color={Colors.snow}/>}/>
+        <ActionButton buttonColor="#8F7140" hideShadow={true}
+                      onPress={() => NavigationActions.deviceInfo()} position={"center"} icon={<Icon name='md-send' size={Metrics.icons.medium} color='#F7EDD3'/>}/>
       </View>
     )
   }
