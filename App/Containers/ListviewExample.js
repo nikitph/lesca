@@ -2,13 +2,16 @@ import React, {PropTypes} from 'react'
 import {View, Text, ListView, Image, TouchableOpacity} from 'react-native'
 import { connect } from 'react-redux'
 import {Actions as NavigationActions} from 'react-native-router-flux'
+import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 // For empty lists
 import AlertMessage from '../Components/AlertMessage'
 
 // Styles
 import styles from './Styles/ListviewExampleStyle'
-import {Images} from '../Themes'
+import {Metrics, Colors} from '../Themes'
 
 
 class ListviewExample extends React.Component {
@@ -108,6 +111,11 @@ class ListviewExample extends React.Component {
           renderRow={this.renderRow}
           pageSize={15}
         />
+        <ActionButton buttonColor="rgba(231,76,60,1)" hideShadow={true}
+          onPress={() => NavigationActions.deviceInfo()}/>
+
+        <ActionButton buttonColor="#3498db" hideShadow={true}
+                      onPress={() => NavigationActions.deviceInfo()} position={"center"} icon={<Icon name='md-send' size={Metrics.icons.medium} color={Colors.snow}/>}/>
       </View>
     )
   }

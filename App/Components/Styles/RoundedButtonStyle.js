@@ -1,22 +1,23 @@
-// @flow
-
 import { StyleSheet } from 'react-native'
 import { Fonts, Colors, Metrics } from '../../Themes/'
 
 export default StyleSheet.create({
   button: {
-    height: 45,
-    borderRadius: 5,
-    marginHorizontal: Metrics.section,
-    marginVertical: Metrics.baseMargin,
-    backgroundColor: Colors.fire,
+    height: 40,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: 'transparent',
+    marginHorizontal: Metrics.smallMargin,
+    marginVertical: Metrics.smallMargin,
+    backgroundColor: 'rgba(177, 138, 106, 0.5)',
     justifyContent: 'center'
   },
   buttonText: {
-    color: Colors.snow,
+    color: '#482e19',
     textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: Fonts.size.medium,
-    marginVertical: Metrics.baseMargin
+    fontWeight: '400',
+    fontFamily: 'Avenir',
+    fontSize: Fonts.size.small,
+    marginHorizontal: Metrics.baseMargin
   }
 })

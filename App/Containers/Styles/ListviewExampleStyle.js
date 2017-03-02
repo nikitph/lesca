@@ -5,7 +5,6 @@ export default StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
     flex: 1,
-    marginTop: Metrics.navBarHeight,
     backgroundColor: '#F4B459'
   },
   row: {
@@ -32,6 +31,11 @@ export default StyleSheet.create({
     marginBottom: Metrics.smallMargin
   },
   listContent: {
-    marginTop: Metrics.baseMargin
+    marginTop: Metrics.doubleBaseMargin
+  },
+  actionButtonIcon: {
+    fontSize: 20,
+    height: 22,
+    color: 'white',
   }
 })

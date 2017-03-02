@@ -6,10 +6,11 @@ import {connect} from 'react-redux'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 import BarcodeActions from '../Redux/BarcodeDataRedux'
 import BarCodeActions from '../Redux/BarCodeRedux'
+import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-import {Metrics} from '../Themes'
+import {Metrics, Colors} from '../Themes'
 // external libs
-import Icon from 'react-native-vector-icons/FontAwesome'
 import Animatable from 'react-native-animatable'
 import {Actions as NavigationActions} from 'react-native-router-flux'
 
@@ -55,6 +56,8 @@ class BarCodeScreen extends React.Component {
         }}
         style={styles.camera}>
         {scanArea}
+        <ActionButton buttonColor="rgba(255,255,255,0.4)" icon={<Icon name='ios-close' size={Metrics.icons.medium} color={Colors.snow} />}
+          onPress={() => NavigationActions.pop()}/>
       </BarcodeScanner>
     )
   }
@@ -100,6 +103,11 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: '#00FF00',
     backgroundColor: 'transparent'
+  },
+  actionButtonIcon: {
+    fontSize: 20,
+    height: 22,
+    color: 'white',
   }
 });
 
