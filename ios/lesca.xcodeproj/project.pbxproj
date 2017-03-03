@@ -27,6 +27,7 @@
 		2A37AB05BCD24BF9855130D0 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5A559BCA670248DDBF58FAB3 /* MaterialIcons.ttf */; };
 		35420E02B45D4F999746CB28 /* libRCTCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DB5D6CF448B478BB7256F68 /* libRCTCamera.a */; };
 		39BC74A98B6746A39E482749 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 188F46BA78454170A2F10FDA /* Foundation.ttf */; };
+		504782B51E68EB250094F08C /* quiksl.png in Resources */ = {isa = PBXBuildFile; fileRef = 504782B41E68EB250094F08C /* quiksl.png */; };
 		5F16113678174DAFBF281CD3 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596998EB83274C6F9D2F181E /* Ionicons.ttf */; };
 		767C2E27E47E4DD5B9312BFC /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E5D28B3088B47348B8454A3 /* SimpleLineIcons.ttf */; };
 		7786B6619BD84F06B289930D /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99CB7C4AD590435BBC86B44F /* Zocial.ttf */; };
@@ -244,6 +245,7 @@
 		3A34971F9A2443D98DC57433 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
 		3EB6F706B6844F749A328967 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
 		4C2928DD7A044AC88A7A96B9 /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; };
+		504782B41E68EB250094F08C /* quiksl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiksl.png; sourceTree = "<group>"; };
 		596998EB83274C6F9D2F181E /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		5A559BCA670248DDBF58FAB3 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		5E5D28B3088B47348B8454A3 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				504782B41E68EB250094F08C /* quiksl.png */,
 			);
 			name = lesca;
 			sourceTree = "<group>";
@@ -393,7 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				146834041AC3E56700842450 /* libReact.a */,
-				508A56AC1E493B1500720FF0 /* libReact.a */,
+				508A56AC1E493B1500720FF0 /* libReact-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -777,7 +780,7 @@
 			remoteRef = 508A56A71E493B1500720FF0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		508A56AC1E493B1500720FF0 /* libReact.a */ = {
+		508A56AC1E493B1500720FF0 /* libReact-tvOS.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libReact-tvOS.a";
@@ -864,6 +867,7 @@
 				2A37AB05BCD24BF9855130D0 /* MaterialIcons.ttf in Resources */,
 				8FE26FFBAA7E4B4E8176398C /* Octicons.ttf in Resources */,
 				767C2E27E47E4DD5B9312BFC /* SimpleLineIcons.ttf in Resources */,
+				504782B51E68EB250094F08C /* quiksl.png in Resources */,
 				7786B6619BD84F06B289930D /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
