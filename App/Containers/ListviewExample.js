@@ -101,6 +101,14 @@ class ListviewExample extends React.Component {
     return this.state.dataSource.getRowCount() === 0
   }
 
+  componentWillReceiveProps (newProps) {
+    if (newProps.item_data) {
+      this.setState({
+        dataSource: this.state.dataSource.cloneWithRows(newProps.item_data)
+      })
+    }
+  }
+
   render () {
     return (
       <View style={styles.container}>
