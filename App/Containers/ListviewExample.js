@@ -69,7 +69,7 @@ class ListviewExample extends React.Component {
         <View style={styles.row}>
           <View style={{justifyContent:'flex-start', padding:5, flex:1}}>
             <Text
-              style={{fontFamily:'AvenirNext-UltraLight', fontSize:12, fontWeight:'300'}}>{rowData.itemname ? rowData.itemname.toUpperCase() : ''}</Text>
+              style={{fontFamily:'AvenirNext-UltraLight', fontSize:12, fontWeight:'300'}}>{rowData.description ? rowData.description : ''}</Text>
             <Text style={{fontFamily:'AvenirNext-UltraLight', fontSize:12, fontWeight:'100'}}>{rowData.number}</Text>
           </View>
         </View>
