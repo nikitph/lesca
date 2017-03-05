@@ -11,7 +11,9 @@ export default () => {
     login: require('./LoginRedux').reducer,
     search: require('./SearchRedux').reducer,
     barcode: require('./BarcodeDataRedux').reducer,
-    barcodeapi: require('./BarCodeRedux').reducer
+    barcodeapi: require('./BarCodeRedux').reducer,
+    sendcode: require('./ParseSendRedux').reducer
+
   })
 
   return configureStore(rootReducer, rootSaga)

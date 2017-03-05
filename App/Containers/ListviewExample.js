@@ -5,6 +5,7 @@ import {Actions as NavigationActions} from 'react-native-router-flux'
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ParseSendActions from '../Redux/ParseSendRedux'
+import Spinner from 'react-native-loading-spinner-overlay';
 
 
 
@@ -129,6 +130,8 @@ class ListviewExample extends React.Component {
 
         <ActionButton buttonColor="#8F7140" hideShadow={true}
                       onPress={() => this.props.sendCodes(this.state.dobj)} position={"center"} icon={<Icon name='md-send' size={Metrics.icons.medium} color='#F7EDD3'/>}/>
+        <Spinner visible={this.props.isfetching} textContent={"Sending..."} textStyle={{color: 'black'}}/>
+
       </View>
     )
   }
@@ -137,7 +140,8 @@ class ListviewExample extends React.Component {
 ListviewExample.propTypes = {
 
   item_data: PropTypes.array,
-  sendCodes: PropTypes.func
+  sendCodes: PropTypes.func,
+  isfetching: PropTypes.bool
 
 
 };
@@ -145,7 +149,10 @@ ListviewExample.propTypes = {
 const mapStateToProps = (state) => {
 
   return {
-    item_data: state.barcodeapi.payload
+
+    item_data: state.barcodeapi.payload,
+    isfetching: state.sendcode.fetching
+
   }
 };
 
