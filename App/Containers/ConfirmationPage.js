@@ -6,7 +6,6 @@ import {connect} from 'react-redux'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 import {Actions as NavigationActions} from 'react-native-router-flux'
-import Modal from 'react-native-modalbox'
 import {Images, Metrics, Colors} from '../Themes'
 
 // Styles
