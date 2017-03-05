@@ -12,6 +12,7 @@
 
 import { call, put } from 'redux-saga/effects'
 import ParseSendActions from '../Redux/ParseSendRedux'
+import {Actions as NavigationActions} from 'react-native-router-flux'
 
 export function * parseSend (api, action) {
   const { data } = action
@@ -22,7 +23,9 @@ export function * parseSend (api, action) {
   if (response.ok) {
     // You might need to change the response here - do this with a 'transform',
     // located in ../Transforms/. Otherwise, just pass the data back from the api.
-    yield put(ParseSendActions.parseSendSuccess(response.data))
+    yield put(ParseSendActions.parseSendSuccess(response.data));
+    yield call(NavigationActions.modal, {message: 'Items Successfully sent to cashier'});
+
   } else {
     yield put(ParseSendActions.parseSendFailure())
   }

@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react'
-import { Scene, Router } from 'react-native-router-flux'
+import { Scene, Router, Modal} from 'react-native-router-flux'
 import Styles from './Styles/NavigationContainerStyle'
 import NavigationDrawer from './NavigationDrawer'
 import NavItems from './NavItems'
@@ -23,6 +23,7 @@ import DeviceInfoScreen from '../Containers/DeviceInfoScreen'
 import BarCodeScreen from '../Containers/BarCodeScreen'
 import WalkThroughScreen from "../Containers/WalkThroughScreen";
 import * as ActionConst from "react-native-router-flux";
+import ConfirmationPage from "../Containers/ConfirmationPage";
 
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
@@ -44,6 +45,10 @@ class NavigationRouter extends Component {
             <Scene key='listviewSearchingExample' component={ListviewSearchingExample} title='Listview Searching' navBar={CustomNavBar} />
             <Scene key='mapviewExample' component={MapviewExample} title='Mapview Example' />
             <Scene key='apiTesting' component={APITestingScreen} title='API Testing' />
+
+            <Scene key="modal" component={Modal} direction={"vertical"}>
+              <Scene key='confPage' component={ConfirmationPage} title='Theme' direction={"vertical"}/>
+            </Scene>
 
             {/* Custom navigation bar example */}
             <Scene key='deviceInfo' component={BarCodeScreen} title='Device Info' navBar={CustomNavBar}/>
