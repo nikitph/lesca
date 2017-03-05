@@ -42,7 +42,7 @@ const parseCreate = (baseURL = 'http://138.68.234.24:1337/parse/classes/') => {
   // way at this level.
   //
 
-  const sendBarCode = (codes) => api.post('datastore', codes);
+  const sendBarCode = (codes) => api.post('datastore', { barcodearray : codes });
 
 
   // ------
