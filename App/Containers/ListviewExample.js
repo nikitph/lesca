@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import {Actions as NavigationActions} from 'react-native-router-flux'
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
+import ParseSendActions from '../Redux/ParseSendRedux'
+
 
 
 // For empty lists
@@ -19,7 +21,8 @@ class ListviewExample extends React.Component {
   state: {
 
     dataSource: Object,
-    user: null
+    user: null,
+    dobj: []
 
   };
 
@@ -45,6 +48,7 @@ class ListviewExample extends React.Component {
 
     // Datasource is always in state
     this.state = {
+      dobj : dataObjects,
       dataSource: ds.cloneWithRows(dataObjects)
     }
   }
@@ -104,6 +108,7 @@ class ListviewExample extends React.Component {
   componentWillReceiveProps (newProps) {
     if (newProps.item_data) {
       this.setState({
+        dobj: newProps.item_data,
         dataSource: this.state.dataSource.cloneWithRows(newProps.item_data)
       })
     }
@@ -123,7 +128,7 @@ class ListviewExample extends React.Component {
           onPress={() => NavigationActions.deviceInfo()}/>
 
         <ActionButton buttonColor="#8F7140" hideShadow={true}
-                      onPress={() => NavigationActions.deviceInfo()} position={"center"} icon={<Icon name='md-send' size={Metrics.icons.medium} color='#F7EDD3'/>}/>
+                      onPress={() => this.props.sendCodes(this.state.dobj)} position={"center"} icon={<Icon name='md-send' size={Metrics.icons.medium} color='#F7EDD3'/>}/>
       </View>
     )
   }
@@ -131,16 +136,25 @@ class ListviewExample extends React.Component {
 
 ListviewExample.propTypes = {
 
-  item_data: PropTypes.array
+  item_data: PropTypes.array,
+  sendCodes: PropTypes.func
+
 
 };
 
 const mapStateToProps = (state) => {
 
-  console.log(state.barcode);
   return {
     item_data: state.barcodeapi.payload
   }
 };
 
-export default connect(mapStateToProps)(ListviewExample)
+const mapDispatchToProps = (dispatch) => {
+  return {
+
+    sendCodes: (params) => dispatch(ParseSendActions.parseSendRequest(params))
+
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListviewExample)
